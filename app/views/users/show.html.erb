@@ -1,0 +1,11 @@
+<% if @user.admin %>
+Name: <%= @user.name %>
+<% else %>
+Name: <%= @user.name %>
+Tickets: <%= @user.tickets %>
+Mood: <%= @user.mood %>
+Height: <%= @user.height %> inches
+<% end %>
+
+<%= link_to "Edit", user_edit_path %>
+<%=link_to "See attractions", attractions_path %>
