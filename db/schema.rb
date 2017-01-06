@@ -15,9 +15,15 @@ ActiveRecord::Schema.define(version: 20140703140419) do
 
   create_table "attractions", force: :cascade do |t|
     t.string  "name"
+<<<<<<< HEAD
     t.integer "tickets"
     t.integer "nausea_rating"
     t.integer "happiness_rating"
+=======
+    t.integer "nausea_rating"
+    t.integer "happiness_rating"
+    t.integer "tickets"
+>>>>>>> 6e3c0e0cb29e73904f7f838539e74bfd445e362a
     t.integer "min_height"
   end
 
@@ -28,11 +34,18 @@ ActiveRecord::Schema.define(version: 20140703140419) do
 
   create_table "users", force: :cascade do |t|
     t.string  "name"
+<<<<<<< HEAD
     t.string  "password_digest"
+=======
+>>>>>>> 6e3c0e0cb29e73904f7f838539e74bfd445e362a
     t.integer "nausea"
     t.integer "happiness"
     t.integer "tickets"
     t.integer "height"
+<<<<<<< HEAD
+=======
+    t.string  "password_digest"
+>>>>>>> 6e3c0e0cb29e73904f7f838539e74bfd445e362a
     t.boolean "admin",           default: false
   end
 
