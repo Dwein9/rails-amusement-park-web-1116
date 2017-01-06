@@ -4,18 +4,10 @@ class User < ActiveRecord::Base
   has_many :attractions, through: :rides
   has_secure_password
 
-  # validates :name, presence: true
-  # validates :password, presence: true, on: :create
-  # validates :happiness, presence: true
-  # validates :nausea, presence: true
-  # validates :height, presence: true
-  # validates :tickets, presence: true
 
   def mood
-    if self.nausea > self.happiness
-      "sad"
-    elsif self.happiness > self.nausea
-      "happy"
+    unless nausea.blank? && happiness.blank?
+      nausea > happiness ? "sad" : "happy"
     end
   end
 

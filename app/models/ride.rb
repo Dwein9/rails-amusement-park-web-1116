@@ -7,19 +7,22 @@ class Ride < ActiveRecord::Base
   validates :attraction_id, presence: true
 
   def take_ride
-    if user.tickets < attraction.tickets && user.height < attraction.min_height
-      "Sorry. You do not have enough tickets the #{attraction.name}. You are not tall enough to ride the #{attraction.name}."
-    elsif user.tickets < attraction.tickets
-      "Sorry. You do not have enough tickets the #{attraction.name}."
-    elsif user.height < attraction.min_height
-      "Sorry. You are not tall enough to ride the #{attraction.name}."
+    response = []
+    unless user.tickets > attraction.tickets
+      response << "You do not have enough tickets to ride the #{attraction.name}."
+    end
+
+    unless user.height > attraction.min_height
+      response << "You are not tall enough to ride the #{attraction.name}."
+    end
+    if response != []
+      return  ["Sorry.", response].join(" ")
     else
-      # binding.pry
-      user.tickets = user.tickets - attraction.tickets
-      user.nausea = user.nausea + attraction.nausea_rating
-      user.happiness = user.happiness + attraction.happiness_rating
+      user.tickets -= attraction.tickets
+      user.nausea += attraction.nausea_rating
+      user.happiness += attraction.happiness_rating
       user.save
+     return "Thanks for riding the #{attraction.name}!"
     end
   end
-
 end
