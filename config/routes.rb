@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-<<<<<<< HEAD
   root 'welcomes#home'
   # resources :users
   # resources :sessions
@@ -13,32 +11,9 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
   post '/users/:id', to: 'users#update', as: 'update_user'
 
-
-  get '/attractions', to: 'attractions#index', as: 'attractions'
-  get '/attractions/:id', to: 'attractions#show', as: 'attraction'
-
-
-
-  # post '/attractions/take_that_ride', to: 'attractions#take_that_ride', as: 'ride'
-  # get '/new', to: 'users#new', as: 'signup'
-  # post '/new', to: 'users#create'
-  # get '/login', to: 'sessions#new', as: 'login'
-  # post '/login', to: 'sessions#create'
-
-=======
-  get '/' => 'application#welcome', as: 'root'
-
-  get '/users/new' => 'users#new', as: 'signup'
-  get '/users/:id' => 'users#show', as: 'user'
-  post '/users' => 'users#create'
-  get '/users/:id/edit' => 'users#edit', as: 'user_edit'
-
-  get '/signin' => 'sessions#new', as: 'signin'
-  delete '/signout' => 'sessions#destroy', as: 'signout'
-  post '/sessions' => 'sessions#create'
-
   resources :attractions
-
-
->>>>>>> 6e3c0e0cb29e73904f7f838539e74bfd445e362a
+  # get '/attractions', to: 'attractions#index'
+  # get '/attractions/:id', to: 'attractions#show'
+  # get '/attractions/new', to: 'attractions#new'
+  # post '/attractions', to: 'attractions#create'
 end

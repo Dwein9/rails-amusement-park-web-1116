@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 <h1>Sign up friends!</h1>
+
 <%=form_for @user do |f| %>
   <%= f.label "Name" %>
   <%= f.text_field :name %>
@@ -16,27 +16,7 @@
 
   <%= f.label :password %>
   <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
-  <%= f.submit %>
+  <%= f.submit "Create User" %>
 
-=======
-<h1>Sign Up</h1>
-<%= form_for @user do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :height %>
-<%= f.text_field :height %>
-<%= f.label :happiness %>
-<%= f.text_field :happiness %>
-<%= f.label :nausea %>
-<%= f.text_field :nausea %>
-<%= f.label :tickets %>
-<%= f.text_field :tickets %>
-<%= f.label :admin %>
-<%= f.check_box :admin %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.submit %>
->>>>>>> 6e3c0e0cb29e73904f7f838539e74bfd445e362a
 <% end %>

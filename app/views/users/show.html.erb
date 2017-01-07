@@ -1,33 +1,14 @@
-<<<<<<< HEAD
 <h1>Welcome back to the theme park!</h1>
-
 <%= flash[:notice] %>
 
 <% if @user.admin %>
-  <%= "ADMIN" %>
+  <%= "ADMIN" %></br>
+<% end %>
 
-
-  
-<% end  %>
-
-
-Name: <%= @user.name %>
-Height: <%= @user.height %>
-Mood: <%= @user.mood %>
-Tickets: <%= @user.tickets %>
+Name: <%= @user.name %></br>
+Height: <%= @user.height %></br>
+Mood: <%= @user.mood %></br>
+Tickets: <%= @user.tickets %></br>
 
 <%= link_to "Log Out", logout_path %>
 <%= link_to "See attractions", attractions_path %>
-=======
-<% if @user.admin %>
-Name: <%= @user.name %>
-<% else %>
-Name: <%= @user.name %>
-Tickets: <%= @user.tickets %>
-Mood: <%= @user.mood %>
-Height: <%= @user.height %> inches
-<% end %>
-
-<%= link_to "Edit", user_edit_path %>
-<%=link_to "See attractions", attractions_path %>
->>>>>>> 6e3c0e0cb29e73904f7f838539e74bfd445e362a
